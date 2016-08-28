@@ -15,3 +15,9 @@ Screen Scraping for forecast
 -     `\"Temp\":\"19°\",`
 -     `\"dtTimeSearch\":\"8/28/16 23:35:17\"`
 -   `}`
+
+#Observations
+- I created a variable called **FakeDataBase** to hold all data about country, region and city. This variable is static to just hold all the data during the WebApi lifetime, so, after the first search the variable is filled with all data and this way dont need to hit the html parse again. It increase the search speed. 
+
+- I used a paralelism to improve the html parse as well.  
+
