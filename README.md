@@ -16,6 +16,13 @@ Screen Scraping for forecast
 -     `\"dtTimeSearch\":\"8/28/16 23:35:17\"`
 -   `}`
 
+# Unit Tests
+#### NoDataFound
+      - Test when no data was found.
+#### DataOk
+      - Test if data is filled up.
+
+
 #Observations
 - I created a variable called **FakeDataBase** to hold all data about country, region and city. This variable is static to just hold all the data during the WebApi lifetime, so, after the first search the variable is filled with all data and this way dont need to hit the html parse again. It increase the search speed. 
 
