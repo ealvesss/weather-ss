@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
 using System.Web.Script.Serialization;
+using System.Xml;
 using WeatherApi.Models;
 
 namespace WeatherApi.Controllers
@@ -47,6 +49,25 @@ namespace WeatherApi.Controllers
             return Request.CreateResponse(HttpStatusCode.OK,result, Configuration.Formatters.JsonFormatter);
         }
 
+        [HttpPost]
+        [Route("api/Weather/XmlValidate")]
+        public HttpResponseMessage XmlValidate(HttpRequestMessage request) {
+
+            HttpStatusCode code = HttpStatusCode.OK;
+            XmlValidatorClass validator = new XmlValidatorClass();
+            String lReturn="";
+            try
+            {
+                lReturn = validator.Validate(request);
+
+            }
+            catch (XmlException ex) {
+                code = HttpStatusCode.BadRequest;
+                lReturn = ex.Message.ToString();
+            }
+
+            return Request.CreateResponse(code,lReturn,Configuration.Formatters.JsonFormatter);
+        }
      
     }
 }

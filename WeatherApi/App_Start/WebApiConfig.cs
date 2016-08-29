@@ -27,6 +27,9 @@ namespace WeatherApi
                 routeTemplate: "api/{controller}/{country}/{city}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+           
+
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.MediaTypeMappings.Add(
                 new QueryStringMapping("type", "json", new MediaTypeHeaderValue("application/json")));
         }

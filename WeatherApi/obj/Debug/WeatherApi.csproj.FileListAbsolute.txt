@@ -85,7 +85,6 @@
 \\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\bin\Microsoft.Owin.Security.Twitter.xml
 \\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 \\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\bin\System.Web.Http.Owin.xml
-\\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\obj\Debug\WeatherApi.csprojResolveAssemblyReference.cache
 \\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\obj\Debug\WeatherApi.dll
 \\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\obj\Debug\WeatherApi.pdb
 \\psf\home\documents\visual studio 2015\Projects\WeatherApi\WeatherApi\bin\HtmlAgilityPack.dll

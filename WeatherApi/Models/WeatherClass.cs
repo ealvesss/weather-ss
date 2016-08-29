@@ -41,15 +41,12 @@ namespace WeatherApi.Models
                Util util = new Util();
                WeatherParamOut lReturn = new WeatherParamOut();
 
-
-
-               var country = (Country) FakeDataBase.Where(x => x.Desc.ToLower().Contains(paramIn.Country.ToLower())).FirstOrDefault();
-
-
-                var city = (City) country.Regions.SelectMany(x => x.Cities).FirstOrDefault(y => y.Desc.ToLower() == paramIn.City.ToLower());
-
             try
             {
+
+                var country = (Country)FakeDataBase.Where(x => x.Desc.ToLower().Contains(paramIn.Country.ToLower())).FirstOrDefault();
+                var city = (City)country.Regions.SelectMany(x => x.Cities).FirstOrDefault(y => y.Desc.ToLower() == paramIn.City.ToLower());
+
                 HtmlDocument doc = util.ReturnWeather("http://www.accuweather.com/en/" + country.Id + "/city/" + city.Id_I + "/weather-forecast/" + city.Id_II);
 
                 HtmlNode teste = doc.DocumentNode.SelectSingleNode("//li[@id='feed-main']//div[@class='info']");
@@ -67,7 +64,11 @@ namespace WeatherApi.Models
                 // serializer.MaxJsonLength = Int32.MaxValue;
 
             }
-            catch (NullReferenceException ex) {
+            catch (NullReferenceException)
+            {
+                throw new Exception("Data not Found");
+            }
+            catch (ArgumentNullException) {
                 throw new Exception("Data not Found");
             }
                 return lReturn;
