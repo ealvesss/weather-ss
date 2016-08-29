@@ -23,8 +23,15 @@ Screen Scraping for forecast
       - Test if data is filled up.
 
 
+#XmlValidation
+      - http://localhost:49399/api/weather/xmlvalidate
+
 #Observations
 - I created a variable called **FakeDataBase** to hold all data about country, region and city. This variable is static to just hold all the data during the WebApi lifetime, so, after the first search the variable is filled with all data and this way dont need to hit the html parse again. It increase the search speed. 
 
 - I used a paralelism to improve the html parse as well.  
+
+
+#WebApi was tested with [PostMan Chrome Extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) 
+
 
